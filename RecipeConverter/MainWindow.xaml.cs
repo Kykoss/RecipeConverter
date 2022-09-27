@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RecipeConverter.Unit;
 
 namespace RecipeConverter
 {
@@ -23,6 +24,8 @@ namespace RecipeConverter
         public MainWindow()
         {
             InitializeComponent();
+
+            MessageBox.Show(UnitConverter.ConvertLine(""));
         }
     }
 }
