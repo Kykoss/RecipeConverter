@@ -25,7 +25,12 @@ namespace RecipeConverter
         {
             InitializeComponent();
 
-            MessageBox.Show(UnitConverter.ConvertLine(""));
+            
+        }
+
+        private void convert_Click(object sender, RoutedEventArgs e)
+        {
+            result.Text = UnitConverter.ConvertLine("");
         }
     }
 }
