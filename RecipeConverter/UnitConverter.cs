@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RecipeConverter.Unit;
+using RecipeConverter.Units;
 
 namespace RecipeConverter
 {
@@ -17,13 +17,13 @@ namespace RecipeConverter
 
         public static string ConvertLine(string recipeLine)
         {
-            Unit.Unit ImperialUnit;
+            Unit ImperialUnit;
 
             Type test = UnitClasses["\""];
 
             try
             {
-                ImperialUnit = (Unit.Unit)Activator.CreateInstance(test);
+                ImperialUnit = (Unit)Activator.CreateInstance(test);
             }
             catch (ArgumentNullException)
             {

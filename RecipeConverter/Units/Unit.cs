@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecipeConverter.Unit
+namespace RecipeConverter.Units
 {
     internal abstract class Unit
     {
