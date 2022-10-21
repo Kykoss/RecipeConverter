@@ -13,24 +13,43 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RecipeConverter.Units;
+using RecipeConverter.Import;
 
 namespace RecipeConverter
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private enum ImportType
+        {
+            TextBox = 0
+        }
+
+        private Recipe Recipe { get;  set; }
+
         public MainWindow()
         {
             InitializeComponent();
-
-            
         }
 
         private void convert_Click(object sender, RoutedEventArgs e)
         {
+            RecipeImporter importer;
+
+            try
+            {
+                //Importer gemäß Cmb setzen
+                importer = new TextBoxImporter();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
             result.Text = UnitConverter.ConvertLine("");
+
+            this.Recipe = new Recipe(importer.GetIngredients());
+
         }
     }
 }

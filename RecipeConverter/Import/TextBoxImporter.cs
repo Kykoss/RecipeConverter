@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace RecipeConverter.Import
 {
-    internal class RawTextImporter: RecipeImporter
+    internal class TextBoxImporter: RecipeImporter
     {
         private void CreateIngredient()
         {
 
         }
-
-        public override Ingredient[] GetIngredients()
+        
+        public Ingredient[] GetIngredients()
         {
-            return Ingredients;
-        }
+            return null;
+        } 
     }
 }

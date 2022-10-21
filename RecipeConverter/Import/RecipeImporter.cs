@@ -8,8 +8,6 @@ namespace RecipeConverter.Import
 {
     internal abstract class RecipeImporter
     {
-        protected Ingredient[] Ingredients { get; set; }
-
         public abstract Ingredient[] GetIngredients();
     }
 }
