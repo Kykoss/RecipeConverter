@@ -19,11 +19,6 @@ namespace RecipeConverter
 {
     public partial class MainWindow : Window
     {
-        private enum ImportType
-        {
-            TextBox = 0
-        }
-
         private Recipe Recipe { get;  set; }
 
         public MainWindow()
@@ -37,18 +32,19 @@ namespace RecipeConverter
 
             try
             {
-                //Importer gemäß Cmb setzen
-                importer = new TextBoxImporter();
+                importer = ImporterFactory.GetImporter(importType.SelectedIndex);
             }
             catch (Exception)
             {
-
                 throw;
             }
 
-            result.Text = UnitConverter.ConvertLine("");
-
             this.Recipe = new Recipe(importer.GetIngredients());
+
+
+            //result.Text = UnitConverter.ConvertLine("");
+
+
 
         }
     }

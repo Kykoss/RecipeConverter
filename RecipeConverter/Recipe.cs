@@ -15,10 +15,5 @@ namespace RecipeConverter
         {
             this.Ingredients = ingredients;
         }
-        /*
-        public Recipe(string recipeText)
-        {
-            this.Ingredients = TextBoxImporter.
-        } */
     }
 }

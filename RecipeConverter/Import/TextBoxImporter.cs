@@ -13,8 +13,17 @@ namespace RecipeConverter.Import
 
         }
         
-        public Ingredient[] GetIngredients()
+        public override Ingredient[] GetIngredients()
         {
+            string[] recipeLine;
+
+            string rawText = textBox.Text;
+
+            foreach (string item in rawText.Split("\n"))
+            {
+                Console.WriteLine(item);
+            }
+
             return null;
         } 
     }
