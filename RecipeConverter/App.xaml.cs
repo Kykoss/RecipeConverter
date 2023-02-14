@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeConverter.UI.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,12 @@ namespace RecipeConverter
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var mainWindow = new MainWindow();
+
+            mainWindow.InitializeComponent();
+            mainWindow.Show();
+        }
     }
 }
